@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>I Love You <3 </title>
+  <title>I Love You &lt;3</title>
   <style>
     body {
       margin: 0;
@@ -29,6 +29,17 @@
       box-shadow: 0 0 20px rgba(255, 100, 130, 0.3);
     }
 
+    .play-button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
     .heart {
       position: absolute;
       color: #ff3366;
@@ -51,24 +62,33 @@
   </style>
 </head>
 <body>
-  <!-- Embed YouTube player -->
-<iframe width="0" height="0" src="https://www.youtube.com/embed/NYJkIlyl1JY?autoplay=1&loop=1&playlist=NYJkIlyl1JY" 
-  title="I Wanna Be Yours - Arctic Monkeys" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
 
-
-  <!-- Message in the center -->
+  <!-- Your message -->
   <div class="message">
     I Love You, Abshar ❤️<br>
     Forever and Always 💌<br>
-    Happy 1 month babe<br>
-    You mean the world to me<br>
+    Happy 1 Month Babe 💖<br>
+    You mean the world to me 💫
   </div>
 
-  <!-- Floating hearts -->
-  <script>
-    const heartCount = 30;
+  <!-- Play our song button -->
+  <button class="play-button" onclick="playOurSong()">▶️ Play Our Song</button>
 
+  <!-- Audio player (hidden) -->
+  <audio id="ourSong" loop>
+    <!-- Replace the source below with your own .mp3 file URL -->
+    <source src="https://example.com/i-wanna-be-yours.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playOurSong() {
+      const audio = document.getElementById("ourSong");
+      audio.play();
+    }
+
+    // Floating hearts generator
+    const heartCount = 30;
     for (let i = 0; i < heartCount; i++) {
       const heart = document.createElement("div");
       heart.className = "heart";
@@ -82,3 +102,4 @@
 
 </body>
 </html>
+
